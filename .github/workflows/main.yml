@@ -26,7 +26,6 @@ jobs:
 
       - run: |
             cd domain
-            echo '${{github.event.repository.name}}'
             echo 'module.exports = {
               webpack: (config, { buildId, dev }) => {
                 config.resolve.symlinks = false
@@ -58,10 +57,9 @@ jobs:
                 "parents": ["A"]
               }
             ]' > kpiHierarchy.json
-            echo 'Installing dependencies'
             npm install
             npm run export
-            touch out/.nojekyll
+
             cd ..
             cd domain
             
