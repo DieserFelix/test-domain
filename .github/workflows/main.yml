@@ -19,7 +19,6 @@ jobs:
           path: 'vis'
 
       - run: |
-            npm install yalc
             cd vis
             echo '[
               {
