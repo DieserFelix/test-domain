@@ -16,8 +16,11 @@ jobs:
       - uses: actions/checkout@v2
         with: 
           repository: 'fraunhofer-iem/kpi-hierarchy-visualization'
+          path: 'vis'
 
       - run: |
+            npm install yalc
+            cd vis
             echo '[
               {
                 "id": "A",
@@ -41,9 +44,9 @@ jobs:
                 "parents": ["A"]
               },
             ]' > kpiHierarchy.json
-            ls -a
             npm install
             npm install --save-dev @types/node
+            npx yalc update
             npm run export
             git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
             npm install gh-pages
