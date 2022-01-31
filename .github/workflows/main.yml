@@ -46,7 +46,7 @@ jobs:
             ]' > kpiHierarchy.json
             npm install
             npm install --save-dev @types/node
-            npx yalc update
+            npx install .yalc/tooltip-component
             npm run export
             git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
             npm install gh-pages
