@@ -16,10 +16,8 @@ jobs:
       - uses: actions/checkout@v2
         with: 
           repository: 'fraunhofer-iem/kpi-hierarchy-visualization'
-          path: 'vis'
 
       - run: |
-            cd vis
             echo '[
               {
                 "id": "A",
@@ -47,7 +45,6 @@ jobs:
             npm install
             npm install --save-dev @types/node
             npm run export
-            cd ..
             git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
             npm install gh-pages
             npx gh-pages -d vis/out -u "github-actions-bot <support+actions@github.com>"
