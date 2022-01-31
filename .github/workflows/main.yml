@@ -41,7 +41,7 @@ jobs:
                 "description": "",
                 "children": [],
                 "parents": ["A"]
-              },
+              }
             ]' > kpiHierarchy.json
             echo 'Installing dependencies'
             npm install
