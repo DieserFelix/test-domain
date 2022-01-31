@@ -1,0 +1,16 @@
+name: Deploy
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with: 
+          repository: 'fraunhofer-iem/kpi-hierarchy-visualization'
+          path: 'vis'
+
+      - run: ls -a
