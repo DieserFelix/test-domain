@@ -45,6 +45,7 @@ jobs:
             ]' > kpiHierarchy.json
             echo 'Installing dependencies'
             npm install
+            ls -a
             npm run export
             cd ..
             git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
