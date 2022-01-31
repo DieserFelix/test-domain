@@ -46,6 +46,7 @@ jobs:
             echo 'Installing dependencies'
             npm install
             npm run export
+            cd ..
             git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
             npm install gh-pages
             npx gh-pages -d vis/out -u "github-actions-bot <support+actions@github.com>"
