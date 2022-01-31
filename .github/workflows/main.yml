@@ -32,7 +32,7 @@ jobs:
                 config.resolve.symlinks = false
                 return config
               },
-              assetPrefix: "${{github.event.repository.name}}"
+              basePath: "/${{github.event.repository.name}}"
             }' > ../vis/next.config.js
             cd ../vis
             echo '[
