@@ -61,7 +61,7 @@ jobs:
             echo 'Installing dependencies'
             npm install
             npm run export
-            
+            touch out/.nojekyll
             cd ..
             cd domain
             
