@@ -43,6 +43,7 @@ jobs:
                 "parents": ["A"]
               },
             ]' > kpiHierarchy.json
+            ls -a
             npm install
             npm install --save-dev @types/node
             npm run export
