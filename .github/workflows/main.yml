@@ -59,6 +59,10 @@ jobs:
             ]' > kpiHierarchy.json
             npm install
             npm run export
+            touch out/.nojekyll
+            cd out
+            ls -a
+            cd ..
 
             cd ..
             cd domain
