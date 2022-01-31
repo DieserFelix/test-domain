@@ -43,9 +43,12 @@ jobs:
                 "parents": ["A"]
               },
             ]' > kpiHierarchy.json
+            echo 'Installing dependencies'
             npm install
+            echo 'Installing missing types/node dependency'
             npm install --save-dev @types/node
-            npx install .yalc/tooltip-component
+            echo 'Installing tooltip-component'
+            npm install .yalc/tooltip-component
             npm run export
             git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
             npm install gh-pages
