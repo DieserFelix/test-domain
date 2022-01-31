@@ -25,7 +25,15 @@ jobs:
           
 
       - run: |
-            cd vis
+            cd domain
+            echo 'module.exports = {
+              webpack: (config, { buildId, dev }) => {
+                config.resolve.symlinks = false
+                return config
+              },
+              assetPrefix: \"${GITHUB_REPOSITORY}\"
+            }' > ../vis/next.config.js
+            cd ../vis
             echo '[
               {
                 "id": "A",
