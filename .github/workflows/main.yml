@@ -26,12 +26,13 @@ jobs:
 
       - run: |
             cd domain
+            echo '${GITHUB_REPOSITORY#*/}'
             echo 'module.exports = {
               webpack: (config, { buildId, dev }) => {
                 config.resolve.symlinks = false
                 return config
               },
-              assetPrefix: \"${GITHUB_REPOSITORY}\"
+              assetPrefix: \"${GITHUB_REPOSITORY#*/}\"
             }' > ../vis/next.config.js
             cd ../vis
             echo '[
